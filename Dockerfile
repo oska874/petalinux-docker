@@ -8,6 +8,7 @@ MAINTAINER z4yx <z4yx@users.noreply.github.com>
 RUN sed -i.bak s/archive.ubuntu.com/mirror.tuna.tsinghua.edu.cn/g /etc/apt/sources.list && \
   dpkg --add-architecture i386 && apt-get update && apt-get install -y \
   build-essential \
+  bc \
   sudo \
   tofrodos \
   iproute2 \
@@ -24,17 +25,10 @@ RUN sed -i.bak s/archive.ubuntu.com/mirror.tuna.tsinghua.edu.cn/g /etc/apt/sourc
   wget \
   socat \
   gcc-multilib \
-  libsdl1.2-dev \
   libglib2.0-dev \
   lib32z1-dev \
   zlib1g:i386 \
-  libgtk2.0-0 \
-  screen \
-  pax \
   diffstat \
-  xvfb \
-  xterm \
-  texinfo \
   gzip \
   unzip \
   cpio \
