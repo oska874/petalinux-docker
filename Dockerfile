@@ -57,8 +57,10 @@ RUN chmod a+x /${PETA_RUN_FILE} && \
   mkdir -p /opt/Xilinx && \
   chmod 777 /tmp /opt /opt/Xilinx && \
   cd /tmp && \
-  sudo -u vivado /accept-eula.sh /${PETA_RUN_FILE} /opt/Xilinx && \
-  rm -f /${PETA_RUN_FILE} /accept-eula.sh 
+  sudo -u vivado /accept-eula.sh /${PETA_RUN_FILE} /opt/Xilinx; \
+  sudo -u vivado /opt/Xilinx/petalinux/tools/yocto-sdk/petalinux-glibc-x86_64-buildtools-* -y -d /opt/Xilinx/petalinux/tools/yocto-sdk
+
+RUN rm -f /${PETA_RUN_FILE} /accept-eula.sh 
 
 USER vivado
 ENV HOME /home/vivado
