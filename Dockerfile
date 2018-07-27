@@ -61,9 +61,9 @@ COPY accept-eula.sh ${PETA_RUN_FILE} /
 # run the install
 RUN chmod a+x /${PETA_RUN_FILE} && \
   mkdir -p /opt/Xilinx && \
-  chmod 777 /tmp /opt/Xilinx && \
+  chmod 777 /tmp /opt /opt/Xilinx && \
   cd /tmp && \
-  sudo -u vivado /accept-eula.sh /${PETA_RUN_FILE} /opt/Xilinx/petalinux && \
+  sudo -u vivado /accept-eula.sh /${PETA_RUN_FILE} /opt/Xilinx && \
   rm -f /${PETA_RUN_FILE} /accept-eula.sh 
 
 USER vivado
@@ -73,5 +73,5 @@ RUN mkdir /home/vivado/project
 WORKDIR /home/vivado/project
 
 #add vivado tools to path
-RUN echo "source /opt/Xilinx/petalinux/settings.sh" >> /home/vivado/.bashrc
+RUN echo "source /opt/Xilinx/settings.sh" >> /home/vivado/.bashrc
 
