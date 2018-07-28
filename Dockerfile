@@ -7,6 +7,7 @@ MAINTAINER z4yx <z4yx@users.noreply.github.com>
 #install dependences:
 RUN sed -i.bak s/archive.ubuntu.com/mirror.tuna.tsinghua.edu.cn/g /etc/apt/sources.list && \
   dpkg --add-architecture i386 && apt-get update && apt-get install -y \
+  kmod \
   build-essential \
   bc \
   sudo \
