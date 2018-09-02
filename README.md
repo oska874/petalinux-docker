@@ -7,3 +7,8 @@ Copy petalinux-v2018.1-final-installer.run file to this folder. Then run
 After installation, launch petalinux with:
 
 `docker run -ti --rm -e DISPLAY=$DISPLAY --net="host" -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/.Xauthority:/home/vivado/.Xauthority -v $HOME/Projects:/home/vivado/project  petalinux:2018.1 /bin/bash`
+
+`-e DISPLAY=$DISPLAY` and `-v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/.Xauthority:/home/vivado/.Xauthority` are used to enable display, so they're options.
+`$HOME/Projects` is the directory in HOST,`/home/vivado/project` is the directory in docker.
+
+
